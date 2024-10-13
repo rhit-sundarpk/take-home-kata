@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import QuizSelection from './components/QuizSelection';
+import JeopardyQuiz from './components/JeopardyQuiz';
+import MillionaireQuiz from './components/MillionaireQuiz';
+import LogicPuzzleQuiz from './components/LogicPuzzleQuiz';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<QuizSelection />} />
+        <Route path="/jeopardy" element={<JeopardyQuiz />} />
+        <Route path="/millionaire" element={<MillionaireQuiz />} />
+        <Route path="/logic-puzzle" element={<LogicPuzzleQuiz />} />
+      </Routes>
+    </Router>
   );
 }
 
