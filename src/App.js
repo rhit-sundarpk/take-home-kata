@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import QuizSelection from './components/QuizSelection';
 import JeopardyQuiz from './components/JeopardyQuiz';
 import MillionaireQuiz from './components/MillionaireQuiz';
-import LogicPuzzleQuiz from './components/LogicPuzzleQuiz';
-
+import Quiz from './components/Quiz';
+import './App.css';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<QuizSelection />} />
-        <Route path="/jeopardy" element={<JeopardyQuiz />} />
-        <Route path="/millionaire" element={<MillionaireQuiz />} />
-        <Route path="/logic-puzzle" element={<LogicPuzzleQuiz />} />
-      </Routes>
-    </Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<QuizSelection />} />
+          <Route path="/sudden-death" element={<Quiz/>} />
+          <Route path="/jeopardy" element={<JeopardyQuiz />} />
+          <Route path="/millionaire" element={<MillionaireQuiz />} />
+        </Routes>
+      </div>
   );
 }
 
